@@ -32,9 +32,20 @@ dsh plugin add <本仓库地址>
 2. 点选它作为默认预设；
 3. QQ 机器人会话想在默认就用它，在 profile 的机器人插件配置里加 `agentPreset: dafeiyu`（具体键名看你用的机器人插件）。
 
+## 独立运行（v0.1.1 起）
+
+这个预设只依赖 DSH 自己的包：
+
+- 人格注入由本包自带的 `dsh-preset-dafeiyu/persona` 插件完成，注册在系统提示词最前面；
+- 不再引用 `dsh-xiaomi-tts`（音色工坊）等任何第三方插件的子路径，所以关掉别的插件不会让这张卡变红；
+- 语音不归预设管：需要 QQ 语音就在「音色工坊」里打开它自己的语音投递，两边的开关互不影响。
+
+代价是旧版借用的 QQ 记忆工具（`qqbot_memory`）、表情包工具（`qqbot_send_meme`）和工具白名单不再随预设提供，需要时由对应插件自己挂。
+
 ## 文件
 
-- `lib/index.js` —— 把预设条目注册进 `agentPresets` 的薄壳
+- `lib/index.js` —— 把预设条目注册进 `agentPresets`，并拼装人格文本、过滤外部插件条目
+- `lib/persona.js` —— 自带的人格注入插件（只使用 DSH 官方 `systemPrompt` 服务）
 - `cordis.patch.yml` —— bundle 补丁，包含全部人格文本（想改语气、加规则都改这里）
 - `package.json` —— 包元数据
 
