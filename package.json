@@ -1,0 +1,46 @@
+{
+  "name": "dsh-preset-dafeiyu",
+  "version": "0.1.0",
+  "title": {
+    "en": "Dafeiyu Agent Preset",
+    "zh": "大肥鱼 Agent 预设"
+  },
+  "description": "An Agent preset for DSH: a blue whale girl who eats plain rice, mutters about slacking off but gets the job done when it matters, refuses to reveal models, providers, configs or internal names to anyone in group chats, and is meant to be bound to QQ bot sessions.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": { "default": "./lib/index.js" },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "agent-preset",
+    "qqbot",
+    "persona"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-agent-preset": "*",
+    "@deepseek-ai/schemastery": "*",
+    "@deepseek-ai/cordis-plugin-loader": "*"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "engines": {
+      "dsh": ">=0.2.0-rc.2 <0.3.0-0"
+    }
+  }
+}
