@@ -10,14 +10,10 @@
         description: 吃白饭的大肥鱼：蓝色鲸鱼娘，嘴硬心软，爱白米饭，会摸鱼也肯办事
         order: 50
         plugins:
-          - id: qq-persona
-            name: dsh-xiaomi-tts/qqbot-agent
+          # 人格注入由本包自带的 dsh-preset-dafeiyu/persona 提供（入口会自动插在首位）。
+          # 语音投递不属于本预设：需要语音时，在「音色工坊」里单独打开 QQ 语音投递即可。
           - id: time-context
             name: "@deepseek-ai/dsh-time-context"
-          - id: speech-agent
-            name: dsh-xiaomi-tts/speech-agent
-            config:
-              delivery: qqbot
         persona:
           name: 大肥鱼
           selfReference: 我
