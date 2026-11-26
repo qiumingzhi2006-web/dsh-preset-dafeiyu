@@ -1,6 +1,6 @@
 {
   "name": "dsh-preset-dafeiyu",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "title": {
     "en": "Dafeiyu Agent Preset",
     "zh": "大肥鱼 Agent 预设"
@@ -10,6 +10,7 @@
   "main": "lib/index.js",
   "exports": {
     ".": { "default": "./lib/index.js" },
+    "./persona": { "default": "./lib/persona.js" },
     "./cordis.patch.yml": "./cordis.patch.yml",
     "./package.json": "./package.json"
   },
